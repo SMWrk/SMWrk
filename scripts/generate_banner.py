@@ -234,8 +234,8 @@ def build_svg(cfg: dict, stats: dict) -> str:
   </defs>
 
   <!-- invisible master clock all animations sync to; this is what makes the whole banner loop -->
-  <rect id="loop" x="0" y="0" width="1" height="1" opacity="0">
-    <animate attributeName="opacity" from="0" to="0" dur="{total:.3f}s" begin="0s;loop.end" repeatCount="indefinite"/>
+  <rect x="0" y="0" width="1" height="1" opacity="0">
+    <animate id="loop" attributeName="opacity" from="0" to="0" dur="{total:.3f}s" begin="0s;loop.end" repeatCount="indefinite"/>
   </rect>
 
   <rect x="0" y="0" width="{W}" height="{H}" rx="18" fill="url(#bgGrad)"/>
