@@ -23,9 +23,7 @@ CONFIG = {
     "taglines": [
         "Hi, I'm Seth 👋 ",
         "I'm a Web Specialist based out of the North Shore, US",
-        "Git-based version control, always",
-        "Currently: taming modular, CRM-native Quality Control App",
-        "Exploring new and exciting technology",
+        "Currently: building modular, CRM-native Quality Control App",
     ],
     "width": 1200,
     "height": 300,
