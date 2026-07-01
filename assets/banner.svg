@@ -38,34 +38,25 @@
     
       <clipPath id="clip0">
         <rect x="60" width="0" height="48" y="130">
-          <animate attributeName="width" from="0" to="270.0"
-                   begin="loop.begin+0.000s" dur="0.825s"
-                   fill="freeze" calcMode="linear"/>
-          <animate attributeName="width" from="270.0" to="0"
-                   begin="loop.begin+2.225s" dur="0.480s"
-                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" dur="16.149s" begin="loop.begin"
+                   repeatCount="indefinite" calcMode="linear"
+                   keyTimes="0.00000; 0.05109; 0.13778; 0.16750; 1.00000" values="0.0; 270.0; 270.0; 0.0; 0.0"/>
         </rect>
       </clipPath>
 
       <clipPath id="clip1">
         <rect x="60" width="0" height="48" y="130">
-          <animate attributeName="width" from="0" to="954.0"
-                   begin="loop.begin+3.005s" dur="2.915s"
-                   fill="freeze" calcMode="linear"/>
-          <animate attributeName="width" from="954.0" to="0"
-                   begin="loop.begin+7.320s" dur="1.696s"
-                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" dur="16.149s" begin="loop.begin"
+                   repeatCount="indefinite" calcMode="linear"
+                   keyTimes="0.00000; 0.18608; 0.36659; 0.45328; 0.55830; 1.00000" values="0.0; 0.0; 954.0; 954.0; 0.0; 0.0"/>
         </rect>
       </clipPath>
 
       <clipPath id="clip2">
         <rect x="60" width="0" height="48" y="130">
-          <animate attributeName="width" from="0" to="1062.0"
-                   begin="loop.begin+9.316s" dur="3.245s"
-                   fill="freeze" calcMode="linear"/>
-          <animate attributeName="width" from="1062.0" to="0"
-                   begin="loop.begin+13.961s" dur="1.888s"
-                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" dur="16.149s" begin="loop.begin"
+                   repeatCount="indefinite" calcMode="linear"
+                   keyTimes="0.00000; 0.57688; 0.77782; 0.86451; 0.98142; 1.00000" values="0.0; 0.0; 1062.0; 1062.0; 0.0; 0.0"/>
         </rect>
       </clipPath>
 
