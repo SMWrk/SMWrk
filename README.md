@@ -15,9 +15,3 @@
 <div align="center">
 <img src="https://skillicons.dev/icons?i=git,github,vscode,python,bash,markdown&theme=dark" />
 </div>
-
-<br/>
-
-<div align="center">
-<sub>Banner auto-regenerates daily via GitHub Actions — see <code>.github/workflows/update-banner.yml</code></sub>
-</div>
