@@ -1,0 +1,164 @@
+<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d0221"/>
+      <stop offset="100%" stop-color="#1a0b2e"/>
+    </linearGradient>
+
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff00e6">
+        <animate attributeName="stop-color"
+          values="#ff00e6;#00f0ff;#7000ff;#ff00e6"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#00f0ff">
+        <animate attributeName="stop-color"
+          values="#00f0ff;#7000ff;#ff00e6;#00f0ff"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#7000ff">
+        <animate attributeName="stop-color"
+          values="#7000ff;#ff00e6;#00f0ff;#7000ff"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+
+    
+      <clipPath id="clip0">
+        <rect x="0" width="0" height="48" y="90">
+          <animate attributeName="width" from="0" to="252.0"
+                   begin="loop.begin+0.000s" dur="0.770s"
+                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" from="252.0" to="0"
+                   begin="loop.begin+2.170s" dur="0.448s"
+                   fill="freeze" calcMode="linear"/>
+        </rect>
+      </clipPath>
+
+      <clipPath id="clip1">
+        <rect x="0" width="0" height="48" y="90">
+          <animate attributeName="width" from="0" to="684.0"
+                   begin="loop.begin+2.918s" dur="2.090s"
+                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" from="684.0" to="0"
+                   begin="loop.begin+6.408s" dur="1.216s"
+                   fill="freeze" calcMode="linear"/>
+        </rect>
+      </clipPath>
+
+      <clipPath id="clip2">
+        <rect x="0" width="0" height="48" y="90">
+          <animate attributeName="width" from="0" to="594.0"
+                   begin="loop.begin+7.924s" dur="1.815s"
+                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" from="594.0" to="0"
+                   begin="loop.begin+11.139s" dur="1.056s"
+                   fill="freeze" calcMode="linear"/>
+        </rect>
+      </clipPath>
+
+      <clipPath id="clip3">
+        <rect x="0" width="0" height="48" y="90">
+          <animate attributeName="width" from="0" to="612.0"
+                   begin="loop.begin+12.495s" dur="1.870s"
+                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" from="612.0" to="0"
+                   begin="loop.begin+15.765s" dur="1.088s"
+                   fill="freeze" calcMode="linear"/>
+        </rect>
+      </clipPath>
+
+      <clipPath id="clip4">
+        <rect x="0" width="0" height="48" y="90">
+          <animate attributeName="width" from="0" to="810.0"
+                   begin="loop.begin+17.153s" dur="2.475s"
+                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" from="810.0" to="0"
+                   begin="loop.begin+21.028s" dur="1.440s"
+                   fill="freeze" calcMode="linear"/>
+        </rect>
+      </clipPath>
+
+    <style>
+      .typed {
+        font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+        font-size: 30px;
+        fill: #f5f5ff;
+        filter: url(#glow);
+        dominant-baseline: middle;
+      }
+      .prompt {
+        font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+        font-size: 30px;
+        fill: #00f0ff;
+        filter: url(#glow);
+      }
+      .stats {
+        font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+        font-size: 13px;
+        fill: #a89bd8;
+        letter-spacing: 0.5px;
+      }
+      .cursor {
+        fill: #00f0ff;
+        filter: url(#glow);
+        animation: blink 0.9s steps(2, start) infinite;
+      }
+      @keyframes blink {
+        50% { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- invisible master clock all animations sync to; this is what makes the whole banner loop -->
+  <rect id="loop" x="0" y="0" width="1" height="1" opacity="0">
+    <animate attributeName="opacity" from="0" to="0" dur="22.768s" begin="0s;loop.end" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="0" y="0" width="900" height="220" rx="18" fill="url(#bgGrad)"/>
+
+  <!-- animated border glow -->
+  <rect x="2" y="2" width="896" height="216" rx="16" fill="none"
+        stroke="url(#neonGrad)" stroke-width="2.5" filter="url(#softGlow)" opacity="0.9"/>
+  <rect x="2" y="2" width="896" height="216" rx="16" fill="none"
+        stroke="url(#neonGrad)" stroke-width="1.5"/>
+
+  <!-- floating glow particles -->
+  <circle cx="810" cy="50" r="46" fill="#ff00e6" opacity="0.12" filter="url(#softGlow)">
+    <animate attributeName="cy" values="50;70;50" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="720" cy="150" r="60" fill="#00f0ff" opacity="0.10" filter="url(#softGlow)">
+    <animate attributeName="cy" values="150;120;150" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="860" cy="170" r="30" fill="#7000ff" opacity="0.14" filter="url(#softGlow)">
+    <animate attributeName="cx" values="860;830;860" dur="8s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="18" y="120.5" class="prompt">&gt;</text>
+      <g clip-path="url(#clip0)"><text x="60" y="120.5" class="typed">Hi, I'm Seth 👋</text></g>
+      <g clip-path="url(#clip1)"><text x="60" y="120.5" class="typed">I build dev workflows with Claude Code</text></g>
+      <g clip-path="url(#clip2)"><text x="60" y="120.5" class="typed">Git-based version control, always</text></g>
+      <g clip-path="url(#clip3)"><text x="60" y="120.5" class="typed">Currently: taming Mermaid diagrams</text></g>
+      <g clip-path="url(#clip4)"><text x="60" y="120.5" class="typed">Shipping incrementally, one session at a time</text></g>
+  <rect x="40" y="90.5" width="16.5" height="36.0" class="cursor" opacity="0">
+    <animate attributeName="x" attributeType="XML"
+      values="312.0; 744.0; 654.0; 672.0; 870.0"
+      dur="22.768s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete"
+      keyTimes="0.0000; 0.1282; 0.3480; 0.5488; 0.7534"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="22.768s" begin="loop.begin" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="880" y="202" text-anchor="end" class="stats">auto-updating  ·  last updated 2026-07-01 UTC</text>
+</svg>
