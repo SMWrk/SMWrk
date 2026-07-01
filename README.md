@@ -19,11 +19,5 @@
 <br/>
 
 <div align="center">
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_GITHUB_USERNAME&theme=radical&hide_border=true&background=0d0221&ring=ff00e6&fire=00f0ff&currStreakLabel=00f0ff" />
-</div>
-
-<br/>
-
-<div align="center">
 <sub>Banner auto-regenerates daily via GitHub Actions — see <code>.github/workflows/update-banner.yml</code></sub>
 </div>
