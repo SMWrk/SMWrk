@@ -1,4 +1,4 @@
-<svg width="900" height="220" viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="300" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#0d0221"/>
@@ -37,34 +37,56 @@
 
     
       <clipPath id="clip0">
-        <rect x="60" width="0" height="48" y="90">
-          <animate attributeName="width" from="0" to="252.0"
-                   begin="loop.begin+0.000s" dur="0.770s"
+        <rect x="60" width="0" height="48" y="130">
+          <animate attributeName="width" from="0" to="270.0"
+                   begin="loop.begin+0.000s" dur="0.825s"
                    fill="freeze" calcMode="linear"/>
-          <animate attributeName="width" from="252.0" to="0"
-                   begin="loop.begin+2.170s" dur="0.448s"
+          <animate attributeName="width" from="270.0" to="0"
+                   begin="loop.begin+2.225s" dur="0.480s"
                    fill="freeze" calcMode="linear"/>
         </rect>
       </clipPath>
 
       <clipPath id="clip1">
-        <rect x="60" width="0" height="48" y="90">
+        <rect x="60" width="0" height="48" y="130">
           <animate attributeName="width" from="0" to="954.0"
-                   begin="loop.begin+2.918s" dur="2.915s"
+                   begin="loop.begin+3.005s" dur="2.915s"
                    fill="freeze" calcMode="linear"/>
           <animate attributeName="width" from="954.0" to="0"
-                   begin="loop.begin+7.233s" dur="1.696s"
+                   begin="loop.begin+7.320s" dur="1.696s"
                    fill="freeze" calcMode="linear"/>
         </rect>
       </clipPath>
 
       <clipPath id="clip2">
-        <rect x="60" width="0" height="48" y="90">
-          <animate attributeName="width" from="0" to="1098.0"
-                   begin="loop.begin+9.229s" dur="3.355s"
+        <rect x="60" width="0" height="48" y="130">
+          <animate attributeName="width" from="0" to="594.0"
+                   begin="loop.begin+9.316s" dur="1.815s"
                    fill="freeze" calcMode="linear"/>
-          <animate attributeName="width" from="1098.0" to="0"
-                   begin="loop.begin+13.984s" dur="1.952s"
+          <animate attributeName="width" from="594.0" to="0"
+                   begin="loop.begin+12.531s" dur="1.056s"
+                   fill="freeze" calcMode="linear"/>
+        </rect>
+      </clipPath>
+
+      <clipPath id="clip3">
+        <rect x="60" width="0" height="48" y="130">
+          <animate attributeName="width" from="0" to="1026.0"
+                   begin="loop.begin+13.887s" dur="3.135s"
+                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" from="1026.0" to="0"
+                   begin="loop.begin+18.422s" dur="1.824s"
+                   fill="freeze" calcMode="linear"/>
+        </rect>
+      </clipPath>
+
+      <clipPath id="clip4">
+        <rect x="60" width="0" height="48" y="130">
+          <animate attributeName="width" from="0" to="666.0"
+                   begin="loop.begin+20.546s" dur="2.035s"
+                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" from="666.0" to="0"
+                   begin="loop.begin+23.981s" dur="1.184s"
                    fill="freeze" calcMode="linear"/>
         </rect>
       </clipPath>
@@ -98,40 +120,42 @@
 
   <!-- invisible master clock all animations sync to; this is what makes the whole banner loop -->
   <rect x="0" y="0" width="1" height="1" opacity="0">
-    <animate id="loop" attributeName="opacity" from="0" to="0" dur="16.236s" begin="0s;loop.end" repeatCount="indefinite"/>
+    <animate id="loop" attributeName="opacity" from="0" to="0" dur="25.465s" begin="0s;loop.end" repeatCount="indefinite"/>
   </rect>
 
-  <rect x="0" y="0" width="900" height="220" rx="18" fill="url(#bgGrad)"/>
+  <rect x="0" y="0" width="1200" height="300" rx="18" fill="url(#bgGrad)"/>
 
   <!-- animated border glow -->
-  <rect x="2" y="2" width="896" height="216" rx="16" fill="none"
+  <rect x="2" y="2" width="1196" height="296" rx="16" fill="none"
         stroke="url(#neonGrad)" stroke-width="2.5" filter="url(#softGlow)" opacity="0.9"/>
-  <rect x="2" y="2" width="896" height="216" rx="16" fill="none"
+  <rect x="2" y="2" width="1196" height="296" rx="16" fill="none"
         stroke="url(#neonGrad)" stroke-width="1.5"/>
 
   <!-- floating glow particles -->
-  <circle cx="810" cy="50" r="46" fill="#ff00e6" opacity="0.12" filter="url(#softGlow)">
+  <circle cx="1110" cy="50" r="46" fill="#ff00e6" opacity="0.12" filter="url(#softGlow)">
     <animate attributeName="cy" values="50;70;50" dur="7s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="720" cy="150" r="60" fill="#00f0ff" opacity="0.10" filter="url(#softGlow)">
+  <circle cx="1020" cy="150" r="60" fill="#00f0ff" opacity="0.10" filter="url(#softGlow)">
     <animate attributeName="cy" values="150;120;150" dur="9s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="860" cy="170" r="30" fill="#7000ff" opacity="0.14" filter="url(#softGlow)">
-    <animate attributeName="cx" values="860;830;860" dur="8s" repeatCount="indefinite"/>
+  <circle cx="1160" cy="170" r="30" fill="#7000ff" opacity="0.14" filter="url(#softGlow)">
+    <animate attributeName="cx" values="1160;1130;1160" dur="8s" repeatCount="indefinite"/>
   </circle>
 
-  <text x="18" y="120.5" class="prompt">&gt;</text>
-      <g clip-path="url(#clip0)"><text x="60" y="120.5" class="typed">Hi, I'm Seth 👋</text></g>
-      <g clip-path="url(#clip1)"><text x="60" y="120.5" class="typed">I'm a Web Specialist based out of the North Shore, US</text></g>
-      <g clip-path="url(#clip2)"><text x="60" y="120.5" class="typed">Currently: building a modular, CRM-native Quality Control App</text></g>
-  <rect x="40" y="90.5" width="16.5" height="36.0" class="cursor" opacity="0">
+  <text x="18" y="160.5" class="prompt">&gt;</text>
+      <g clip-path="url(#clip0)"><text x="60" y="160.5" class="typed">Hi, I'm Seth 👋 </text></g>
+      <g clip-path="url(#clip1)"><text x="60" y="160.5" class="typed">I'm a Web Specialist based out of the North Shore, US</text></g>
+      <g clip-path="url(#clip2)"><text x="60" y="160.5" class="typed">Git-based version control, always</text></g>
+      <g clip-path="url(#clip3)"><text x="60" y="160.5" class="typed">Currently: taming modular, CRM-native Quality Control App</text></g>
+      <g clip-path="url(#clip4)"><text x="60" y="160.5" class="typed">Exploring new and exciting technology</text></g>
+  <rect x="40" y="130.5" width="16.5" height="36.0" class="cursor" opacity="0">
     <animate attributeName="x" attributeType="XML"
-      values="312.0; 1014.0; 1158.0"
-      dur="16.236s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete"
-      keyTimes="0.0000; 0.1797; 0.5684"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="16.236s" begin="loop.begin" repeatCount="indefinite"/>
+      values="330.0; 1014.0; 654.0; 1086.0; 726.0"
+      dur="25.465s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete"
+      keyTimes="0.0000; 0.1180; 0.3658; 0.5453; 0.8068"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="25.465s" begin="loop.begin" repeatCount="indefinite"/>
     <animate attributeName="fill-opacity" values="1;0;1" dur="0.9s" begin="loop.begin" repeatCount="indefinite"/>
   </rect>
 
-  <text x="880" y="202" text-anchor="end" class="stats">★ 0 stars  ·  1 repos  ·  0 followers  ·  last updated 2026-07-01 UTC</text>
+  <text x="1180" y="282" text-anchor="end" class="stats">★ 0 stars  ·  1 repos  ·  0 followers  ·  last updated 2026-07-01 UTC</text>
 </svg>
