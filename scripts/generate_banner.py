@@ -21,12 +21,14 @@ import urllib.error
 CONFIG = {
     "username": os.environ.get("GH_USERNAME", "YOUR_GITHUB_USERNAME"),
     "taglines": [
-        "Hi, I'm Seth 👋",
+        "Hi, I'm Seth 👋 ",
         "I'm a Web Specialist based out of the North Shore, US",
-        "Currently: building a modular, CRM-native Quality Control App",
+        "Git-based version control, always",
+        "Currently: taming modular, CRM-native Quality Control App",
+        "Exploring new and exciting technology",
     ],
-    "width": 900,
-    "height": 220,
+    "width": 1200,
+    "height": 300,
     "font_family": "'Fira Code', 'JetBrains Mono', Consolas, monospace",
     "font_size": 30,
     "type_speed_ms": 55,     # per character, typing in
