@@ -22,10 +22,8 @@ CONFIG = {
     "username": os.environ.get("GH_USERNAME", "YOUR_GITHUB_USERNAME"),
     "taglines": [
         "Hi, I'm Seth 👋",
-        "I build dev workflows with Claude Code",
-        "Git-based version control, always",
-        "Currently: taming Mermaid diagrams",
-        "Shipping incrementally, one session at a time",
+        "I'm a Web Specialist based out of the North Shore, US",
+        "Currently: building a modular, CRM-native Quality Control App",
     ],
     "width": 900,
     "height": 220,
