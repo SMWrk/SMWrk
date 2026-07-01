@@ -137,7 +137,7 @@ def build_svg(cfg: dict, stats: dict) -> str:
         clip_id = f"clip{i}"
         line_groups.append(f'''
       <clipPath id="{clip_id}">
-        <rect x="0" width="0" height="{font_size * 1.6:.0f}" y="{text_y - font_size:.0f}">
+        <rect x="{text_x}" width="0" height="{font_size * 1.6:.0f}" y="{text_y - font_size:.0f}">
           <animate attributeName="width" from="0" to="{seg['width_px']:.1f}"
                    begin="loop.begin+{seg['type_begin']:.3f}s" dur="{seg['type_dur']:.3f}s"
                    fill="freeze" calcMode="linear"/>
@@ -229,10 +229,6 @@ def build_svg(cfg: dict, stats: dict) -> str:
       .cursor {{
         fill: {c['neon_b']};
         filter: url(#glow);
-        animation: blink 0.9s steps(2, start) infinite;
-      }}
-      @keyframes blink {{
-        50% {{ opacity: 0; }}
       }}
     </style>
   </defs>
@@ -269,6 +265,7 @@ def build_svg(cfg: dict, stats: dict) -> str:
       dur="{total:.3f}s" begin="loop.begin" repeatCount="indefinite" calcMode="discrete"
       keyTimes="{'; '.join(f'{(s['type_begin'])/total:.4f}' for s in segments)}"/>
     <animate attributeName="opacity" values="0;1;1;0" dur="{total:.3f}s" begin="loop.begin" repeatCount="indefinite"/>
+    <animate attributeName="fill-opacity" values="1;0;1" dur="0.9s" begin="loop.begin" repeatCount="indefinite"/>
   </rect>
 
   <text x="{W - 20}" y="{H - 18}" text-anchor="end" class="stats">{esc(stats_text)}</text>
