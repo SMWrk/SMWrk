@@ -4,9 +4,9 @@
 
 <br/>
 
-<img src="https://img.shields.io/badge/status-shipping-ff00e6?style=for-the-badge&labelColor=0d0221" />
-<img src="https://img.shields.io/badge/stack-Claude%20Code%20%7C%20Git-00f0ff?style=for-the-badge&labelColor=0d0221" />
-<img src="https://img.shields.io/badge/mode-automated-7000ff?style=for-the-badge&labelColor=0d0221" />
+<img src="https://img.shields.io/badge/EDUCATION-UWSTOUT_POLYTECHNIC-ff00e6?style=for-the-badge&labelColor=0d0221" />
+<img src="https://img.shields.io/badge/BACKGROUND-CODE_SEO_DESIGN-00f0ff?style=for-the-badge&labelColor=0d0221" />
+<img src="https://img.shields.io/badge/OBJECTIVE-EXPLORE_NEW_TECH-7000ff?style=for-the-badge&labelColor=0d0221" />
 
 </div>
 
