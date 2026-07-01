@@ -1,0 +1,44 @@
+name: Update Profile Banner
+
+on:
+  schedule:
+    # Runs daily at 09:00 UTC — adjust to taste
+    - cron: "0 9 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "scripts/generate_banner.py"
+
+permissions:
+  contents: write
+
+jobs:
+  update-banner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate banner SVG
+        env:
+          GH_USERNAME: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_banner.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- assets/banner.svg; then
+            git add assets/banner.svg
+            git commit -m "chore: refresh profile banner [automated]"
+            git push
+          else
+            echo "No changes to banner.svg — skipping commit."
+          fi
