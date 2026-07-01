@@ -130,18 +130,44 @@ def build_svg(cfg: dict, stats: dict) -> str:
     text_y = H / 2 + font_size * 0.35
 
     # --- Build per-line clip + text groups ---
+    def envelope(seg, total):
+        """Build a full-cycle keyTimes/values envelope for one line's clip width:
+        idle at 0 -> ramp up during typing -> hold at full width -> ramp down
+        during erase -> idle at 0 for the remainder. Using repeatCount="indefinite"
+        on a single animate spanning the whole cycle (rather than separate one-shot
+        animates triggered by an absolute begin offset) is required: begin events
+        only fire once for an indefinitely-repeating syncbase, so one-shot children
+        chained off it never re-fire after the first loop."""
+        checkpoints = [
+            (0.0, 0.0),
+            (seg["type_begin"], 0.0),
+            (seg["type_begin"] + seg["type_dur"], seg["width_px"]),
+            (seg["erase_begin"], seg["width_px"]),
+            (seg["erase_begin"] + seg["erase_dur"], 0.0),
+            (total, 0.0),
+        ]
+        times, values = [], []
+        for t_abs, v in checkpoints:
+            frac = max(0.0, min(1.0, t_abs / total))
+            if times and abs(frac - times[-1]) < 1e-9:
+                values[-1] = v  # dedupe identical keyTimes (e.g. first line starts at t=0)
+                continue
+            times.append(frac)
+            values.append(v)
+        return times, values
+
     line_groups = []
     for i, seg in enumerate(segments):
         clip_id = f"clip{i}"
+        keytimes, values = envelope(seg, total)
+        kt_str = "; ".join(f"{k:.5f}" for k in keytimes)
+        val_str = "; ".join(f"{v:.1f}" for v in values)
         line_groups.append(f'''
       <clipPath id="{clip_id}">
         <rect x="{text_x}" width="0" height="{font_size * 1.6:.0f}" y="{text_y - font_size:.0f}">
-          <animate attributeName="width" from="0" to="{seg['width_px']:.1f}"
-                   begin="loop.begin+{seg['type_begin']:.3f}s" dur="{seg['type_dur']:.3f}s"
-                   fill="freeze" calcMode="linear"/>
-          <animate attributeName="width" from="{seg['width_px']:.1f}" to="0"
-                   begin="loop.begin+{seg['erase_begin']:.3f}s" dur="{seg['erase_dur']:.3f}s"
-                   fill="freeze" calcMode="linear"/>
+          <animate attributeName="width" dur="{total:.3f}s" begin="loop.begin"
+                   repeatCount="indefinite" calcMode="linear"
+                   keyTimes="{kt_str}" values="{val_str}"/>
         </rect>
       </clipPath>''')
 
