@@ -17,19 +17,22 @@ jobs:
   update-banner:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout (no marketplace action)
+        env:
+          GH_TOKEN_FOR_CLONE: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git clone --depth 1 --branch "${GITHUB_REF_NAME}" \
+            "https://x-access-token:${GH_TOKEN_FOR_CLONE}@github.com/${GITHUB_REPOSITORY}.git" .
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+      # ubuntu-latest ships with python3 preinstalled — no setup-python action needed.
+      - name: Verify Python
+        run: python3 --version
 
       - name: Generate banner SVG
         env:
           GH_USERNAME: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/generate_banner.py
+        run: python3 scripts/generate_banner.py
 
       - name: Commit and push if changed
         run: |
